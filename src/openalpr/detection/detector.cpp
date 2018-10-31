@@ -158,8 +158,11 @@ namespace alpr
 
       
 
-      for (unsigned int j = 0; j < orderedRegions.size(); j++)
-        detectedRegions.push_back(orderedRegions[j]);
+	  for (unsigned int j = 0; j < orderedRegions.size(); j++)
+	  {
+		  orderedRegions[j].roiID = i;
+		  detectedRegions.push_back(orderedRegions[j]);
+	  }
     }
 
     // Show debug mask image

@@ -268,6 +268,8 @@ namespace alpr
       if (!pipeline_data.disqualified)
       {
         AlprPlateResult plateResult;
+
+        plateResult.roiID = plateRegion.roiID;
         
         plateResult.country = config->country;
         
@@ -389,7 +391,9 @@ namespace alpr
         // Check if this plate has any children, if so, send them back up for processing
         for (unsigned int childidx = 0; childidx < plateRegion.children.size(); childidx++)
         {
-          plateQueue.push(plateRegion.children[childidx]);
+            PlateRegion l_plate_region = plateRegion.children[childidx];
+            l_plate_region.roiID = plateRegion.roiID;
+            plateQueue.push(l_plate_region);
         }
       }
 
