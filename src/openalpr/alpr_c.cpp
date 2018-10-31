@@ -23,7 +23,7 @@
 #include <vector>
 #include <stdlib.h>
  
-OPENALPRC_DLL_EXPORT OPENALPR* openalpr_init(const char* country, const char* configFile, const char* runtimeDir)
+OPENALPR* openalpr_init(const char* country, const char* configFile, const char* runtimeDir)
 {
   alpr::Alpr* alpr_inst = new alpr::Alpr(country, configFile, runtimeDir);
   
