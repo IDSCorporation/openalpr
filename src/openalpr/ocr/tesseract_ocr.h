@@ -32,7 +32,7 @@
 #include "support/version.h"
 
 #include "ocr.h"
-#include "tesseract/baseapi.h"
+#include "baseapi.h"
 
 namespace alpr
 {
